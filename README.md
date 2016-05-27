@@ -7,6 +7,7 @@
 * [项目介绍](#项目介绍)
 * [使用说明](#使用说明)
  * [操作说明](#操作说明)
+ * [获取代码](#获取代码)
 * [致谢](#致谢)
  
 
@@ -25,7 +26,7 @@
 
 <a name = "项目介绍"></a>
 ## 项目介绍 ##
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本项目是依赖于lufylegend库而制作的。结构比较简单、单一，利用lufylegend库件中的原生类构建游戏中的各个组件。如：Lsprite类构建背景层以及预览层，LLoader类加载图片等。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本项目是依赖于lufylegend库而制作的HTML5页面小游戏。结构比较简单、单一，利用lufylegend库件中的原生类构建游戏中的各个组件。如：Lsprite类构建背景层以及预览层，LLoader类加载图片等。
 
 
 <a name = "使用说明"></a>
@@ -33,7 +34,26 @@
 
 <a name = "操作说明"></a>
 ### 操作说明 ###
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用键盘上的<i class="icon-long-arrow-down"></i>、下、左，右键进行控制，
+>用键盘上的**上**、**下**、**左**，**右**键进行控制。说明：  
+上键：对方块进行谁时针旋转  
+下键：加速方块的下落  
+右键：对方块进行右移操作  
+左键：对方块进行左移操作
+
+
+<a name = "获取代码"></a>
+### 获取代码 ###
+* github项目主页
+
+
+<a name = "致谢"></a>
+## 致谢 ##
+* lufylegend引擎&nbsp  
+lufylegend官方地址：<http://lufylegend.com/lufylegend>  
+* 敬爱的室友们：  
+***韩世宇***、***金健***、***李宜***  
+* 尊敬的老师：
+***孙林***
 
 
 
