@@ -13,9 +13,7 @@
 
 <a name = "背景介绍"></a>
 ## 背景介绍 ##
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在两三年前就有想做一款小游戏的想法。刚好这次javascript课程  
-的期末测评就是要与室友合作完成这个小项目,这是自己的第一个小项目  
-有许多不足之处望大家见谅。
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在两三年前就有想做一款小游戏的想法。刚好这次javascript课程的期末测评就是要与室友合作完成一个小项目。借此机会来实践一下，由于这是自己的第一个小项目有许多不足之处望大家见谅。
 
 
 <a name = "项目名称"></a>
@@ -43,12 +41,12 @@
 
 <a name = "获取代码"></a>
 ### 获取代码 ###
-* github项目主页
+* github项目主页：<https://github.com/xugaoxiang1306410204/Tetris.git>
 
 
 <a name = "致谢"></a>
 ## 致谢 ##
-* lufylegend引擎&nbsp  
+* lufylegend引擎
 lufylegend官方地址：<http://lufylegend.com/lufylegend>  
 * 敬爱的室友们：  
 ***韩世宇***、***金健***、***李宜***  
