@@ -1,5 +1,6 @@
 # Tetris #
-
+![img](https://raw.githubusercontent.com/xugaoxiang1306410204/Tetris/master/img/%E6%95%88%E6%9E%9C%E5%9B%BE1.PNG)
+![img](https://raw.githubusercontent.com/xugaoxiang1306410204/Tetris/master/img/%E6%95%88%E6%9E%9C%E5%9B%BE2.PNG)
 ------
 ## 目录 ##
 * [背景介绍](#背景介绍)
