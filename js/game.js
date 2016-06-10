@@ -24,6 +24,9 @@
 		var nextBox,nowBox;
 		var pointBox ={x:0,y:0};
 		var speed=15,speedIndex=0,speedMax=15;
+		var point=0,pointText;
+		//消除层数相关
+		var del=0,delText;
 		//控制单元
 		var myKey = {
 			keyControl:null,
