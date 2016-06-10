@@ -82,3 +82,26 @@
 			);	
 			//gameInit();
 		}
+		//游戏标题画面初始化
+		function gameInit(){
+			//显示游戏标题
+			var title = new LTextField();
+			title.x = 100;
+			title.y = 100;
+			title.text = "俄罗斯方块";
+			title.size = 30;
+			title.color ="white";
+			backLayer.addChild(title);
+			//提示信息
+			backLayer.graphics.drawRect(1,"white",[50,250,250,30]);
+			var infoText = new LTextField();
+			infoText.x = 75;
+			infoText.y = 250;
+			infoText.size = 25;
+			infoText.text = "点击页面开始游戏";
+			infoText.color = "white";
+			backLayer.addChild(infoText);
+			//添加鼠标点击事件侦听
+			infoText.addEventListener(LMouseEvent.MOUSE_UP,gameStart);
+		}
+
