@@ -34,3 +34,51 @@
 			touchY:0,
 			touchMove:false
 		};
+		//main函数
+		function main(){
+			map =[
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0],
+				[0,0,0,0,0,0,0,0,0,0]
+			];
+			box = new Box();
+			//背景层初始化
+			backLayer = new LSprite();
+			//在背景层描绘背景
+			backLayer.graphics.drawRect(2,"brown",[0,0,350,480],true,"black");
+			addChild(backLayer);
+			//进度条显示层初始化
+			loadingLayer = new LoadingSample1();
+			backLayer.addChild(loadingLayer);
+			//利用LLoadManage类：进度条的读取与显示
+			LLoadManage.load(
+				imgData,
+				function(progress){
+					loadingLayer.setProgress(progress);
+			    },
+			    function(result){
+			    	imglist = result;
+					backLayer.removeChild(loadingLayer);
+					loadingLayer= null;
+					gameInit();
+			    }
+			);	
+			//gameInit();
+		}
