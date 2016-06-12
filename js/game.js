@@ -120,11 +120,62 @@
 			addBox();
 			//添加循环播放事件
 			backLayer.addEventListener(LEvent.ENTER_FRAME, onframe);
+			//添加键盘事件用于控制方块移动
+			LEvent.addEventListener(LGlobal.window,LKeyboardEvent.KEY_DOWN,onkeydown);
+			LEvent.addEventListener(LGlobal.window,LKeyboardEvent.KEY_UP,onkeyup);
+		}
+		//键盘按下事件
+		function onkeydown(event){
+			if(myKey.keyControl != null){
+				return;
+			}
+			if(event.keyCode == 37){
+				//left
+				myKey.keyControl = "left";
+			}else if(event.keyCode == 38){
+				//up
+				myKey.keyControl = "up";
+			}else if(event.keyCode == 39){
+				//right
+				myKey.keyControl = "right";
+			}else if(event.keyCode == 40){
+				//down
+				myKey.keyControl = "down";
+			}
+		}
+		//键盘弹起事件
+		function onkeyup(event){
+			//弹起后myKey属性恢复默认
+			myKey.keyControl = null;
+			myKey.stepindex = 0;
 		}
 		//循环实现方块下落
 		function onframe(){
 			//首先移除当前下落的方块
 			removeBox();
+			if(myKey.keyControl != null && myKey.stepindex-- < 0){
+				myKey.stepindex = myKey.step;
+				switch(myKey.keyControl){
+					case "left":
+						if(checkBox(-1,0)){
+							pointBox.x-=1;
+						}
+						break;
+					case "right":
+						if(checkBox(1,0)){
+							pointBox.x+=1;
+						}
+						break;
+					case "down":
+						if(checkBox(0,1)){
+							pointBox.y+=1;
+						}
+						break;
+					case "up":
+						changeBox();
+						break;	
+				}
+			}
 			if(speedIndex++ > speed){
 				speedIndex = 0;
 				if(checkBox(0,1)){
