@@ -117,6 +117,9 @@
 			//预览层初始化
 			nextLayer = new LSprite();
 			backLayer.addChild(nextLayer);
+			//方块绘制层初始化
+			graphicsLayer = new LSprite();
+			backLayer.addChild(graphicsLayer);
 			//得分显示
 			pointText = new LTextField();
 			pointText.x = 240;
@@ -366,7 +369,7 @@
 		}
 		//消除可消除的方块
 		function delBox(){
-			var i,j,count;
+			var i,j,count=0;
 			for(i=pointBox.y;i<(pointBox.y+4);i++){
 				if(i<0||i>=map.length)
 					continue;
