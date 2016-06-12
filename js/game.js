@@ -380,6 +380,21 @@
 					}
 				}
 			}
+			if(count == 0)return;
+			del += count;
+			if(count == 1){
+				point += 10;
+			}else if(count == 2){
+				point += 30;
+			}else if(count == 3){
+				point += 60;
+			}else if(count == 4){
+				point += 100;
+			}
+			if(speed > 1 && del / 1000 >= (speedMax - speed + 1)){
+				speed--;
+			}
+			showText();
 		}
 		//游戏得分，消除层数以及游戏速度显示
 		function showText(){
