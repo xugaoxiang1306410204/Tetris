@@ -187,6 +187,7 @@
 						gameOver();
 						return;
 					}
+					delBox();
 					getNewBox();
 				}
 			}
