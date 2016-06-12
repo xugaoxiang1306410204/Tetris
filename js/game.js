@@ -115,4 +115,29 @@
 			var bitmap = new LBitmap(new LBitmapData(imglist["backImage"]));
 			backLayer.addChild(bitmap);
 		}
+		//获得新方块
+		function getNewBox(){
+			if(nextBox ==null){
+				nextBox = box.getBox();
+			}
+			nowBox = nextBox;
+			//当前下落方块的坐标
+			pointBox.x=3;
+			pointBox.y=-4;
+			nextBox = box.getBox();
+			nextLayer.removeAllChild();
+			//将nextBox显示在预览层
+			var i,j,bitmap;
+			for(i=0;i<nextBox.length;i++){
+				for(j=0;j<nextBox[0].length;j++){
+					if(nextBox[i][j]===0){
+						continue;
+					}
+					bitmap =new LBitmap(bitmapdataList[nextBox[i][j]-1]);
+					bitmap.x= bitmap.getWidth()*j+START_X2;
+					bitmap.y= bitmap.getHeight()*i+START_Y2;
+					nextLayer.addChild(bitmap);
+				}
+			}
+		}
 
