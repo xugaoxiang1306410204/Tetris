@@ -114,6 +114,15 @@
 			backLayer.removeAllChild();
 			var bitmap = new LBitmap(new LBitmapData(imglist["backImage"]));
 			backLayer.addChild(bitmap);
+			//预览层初始化
+			nextLayer = new LSprite();
+			backLayer.addChild(nextLayer);
+			bitmapdataList = [
+				new LBitmapData(imglist["block1"]),
+				new LBitmapData(imglist["block2"]),
+				new LBitmapData(imglist["block3"]),
+				new LBitmapData(imglist["block4"])
+			];
 			//获得新方块
 			getNewBox();
 			//在屏幕上添加方块
