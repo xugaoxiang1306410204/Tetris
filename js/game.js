@@ -236,4 +236,15 @@
 				}
 			}
 		}
+		//游戏结束
+		function gameOver(){
+			backLayer.die();
+			var over = new LTextField();
+			over.color ="red";
+			over.size = 40;
+			over.text = "Game Over";
+			over.x =(LGlobal.width - over.getWidth())*0.5;
+			over.y =200;
+			backLayer.addChild(over);
+		}
 
