@@ -142,6 +142,36 @@
 			addBox();
 			drawMap();
 		}
+		//判断是否可移动
+		function checkBox(nx,ny){
+			var i,j;
+			if(pointBox.y < 0){
+				//防止方块下落之前，就已向左或向右移到屏幕之外
+				if(pointBox.x + nx < 0 || pointBox.x + nx > map[0].length - 4){
+					return false;
+				}
+			}
+			//遍历nowBox数组
+			for(i=0;i<nowBox.length;i++){
+				for(j=0;j<nowBox[0].length;j++){
+					//判断方块网格是否进入map
+					if(i+pointBox.y+ny<0){
+						continue;
+					}else if(i+pointBox.y+ny>=map.length||j+pointBox.x+nx>=map[0].length||j+pointBox.x+nx<0){
+						//超出网格范围时
+						if(nowBox[i][j] ==0){
+							continue;
+						}else{
+							return false;
+						}
+					}
+					if(nowBox[i][j] > 0 && map[i+pointBox.y+ny][j+pointBox.x+nx]>0){
+						return false;
+					}
+				}
+			}
+			return true;
+		}
 		//移除方块
 		function removeBox(){
 			var i,j;
