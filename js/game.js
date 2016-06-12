@@ -107,4 +107,12 @@
 			//添加鼠标点击事件侦听
 			infoText.addEventListener(LMouseEvent.MOUSE_UP,gameStart);
 		}
+		//游戏画面初始化
+		function gameStart(event){
+			//背景层清空
+			backLayer.die();
+			backLayer.removeAllChild();
+			var bitmap = new LBitmap(new LBitmapData(imglist["backImage"]));
+			backLayer.addChild(bitmap);
+		}
 
