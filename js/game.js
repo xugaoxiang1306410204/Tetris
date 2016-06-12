@@ -117,6 +117,26 @@
 			//预览层初始化
 			nextLayer = new LSprite();
 			backLayer.addChild(nextLayer);
+			//得分显示
+			pointText = new LTextField();
+			pointText.x = 240;
+			pointText.y = 200;
+			pointText.size = 20;
+			backLayer.addChild(pointText);
+			//消除层数显示
+			delText = new LTextField();
+			delText.x = 240;
+			delText.y = 290;
+			delText.size = 20;
+			backLayer.addChild(delText);
+			//速度表示
+			speedText = new LTextField();
+			speedText.x = 240;
+			speedText.y = 385;
+			speedText.size = 20;
+			backLayer.addChild(speedText);
+			//将游戏得分，消除层数以及游戏速度显示到画面上
+			showText();
 			bitmapdataList = [
 				new LBitmapData(imglist["block1"]),
 				new LBitmapData(imglist["block2"]),
@@ -360,6 +380,12 @@
 					}
 				}
 			}
+		}
+		//游戏得分，消除层数以及游戏速度显示
+		function showText(){
+			pointText.text = point;
+			delText.text = del;
+			speedText.text = speedMax - speed + 1;
 		}
 		//游戏结束
 		function gameOver(){
