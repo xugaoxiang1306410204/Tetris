@@ -142,6 +142,19 @@
 			addBox();
 			drawMap();
 		}
+		//绘制所有的方块
+		function drawMap(){
+			var i,j;
+			for(i=0;i<map.length;i++){
+				for(j=0;j<map[0].length;j++){
+					if(nodelist[i][j]["index"] >=0){
+						nodelist[i][j]["bitmap"].bitmapData =bitmapdataList[nodelist[i][j]["index"]];
+					}else{
+						nodelist[i][j]["bitmap"].bitmapData = null;
+					}
+				}
+			}
+		}
 		//判断是否可移动
 		function checkBox(nx,ny){
 			var i,j;
