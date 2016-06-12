@@ -320,6 +320,23 @@
 				nodelist[0][j].index= -1;
 			}
 		}
+		//消除可消除的方块
+		function delBox(){
+			var i,j,count;
+			for(i=pointBox.y;i<(pointBox.y+4);i++){
+				if(i<0||i>=map.length)
+					continue;
+				for(j=0;j<map[0].length;j++){
+					if(map[i][j]==0){
+						break;
+					}
+					if(j==map[0].length-1){
+						moveLine(i);
+						count++;
+					}
+				}
+			}
+		}
 		//游戏结束
 		function gameOver(){
 			backLayer.die();
