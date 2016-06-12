@@ -193,6 +193,25 @@
 			addBox();
 			drawMap();
 		}
+		//方块变形
+		function changeBox(){
+			var saveBox = nowBox;
+			nowBox =[
+				[0,0,0,0],
+				[0,0,0,0],
+				[0,0,0,0],
+				[0,0,0,0]
+			];
+			var i,j;
+			for(i=0;i<saveBox.length;i++){
+				for(j=0;j<saveBox[0].length;j++){
+					nowBox[i][j] = saveBox[3-j][i];
+				}
+			}
+			if (!checkBox(0,0)){
+				nowBox = saveBox;
+			}
+		}
 		//绘制所有的方块
 		function drawMap(){
 			var i,j;
