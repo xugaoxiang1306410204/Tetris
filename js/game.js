@@ -123,6 +123,20 @@
 				new LBitmapData(imglist["block3"]),
 				new LBitmapData(imglist["block4"])
 			];
+			//方块数据数组初始化,让每一个位置都能显示一个小方块
+			nodelist = [];
+			var i,j,nArr,bitmap;
+			for(i=0;i<map.length;i++){
+				nArr = [];
+				for(j=0;j<map[0].length;j++){
+					bitmap = new LBitmap(bitmapdataList[0]);
+					bitmap.x = bitmap.getWidth()*j+START_X1;
+					bitmap.y = bitmap.getHeight()*i+START_Y1;
+					graphicsLayer.addChild(bitmap);
+					nArr[j] = {"index":-1,"value":0,"bitmap":bitmap};
+				}
+				nodelist[i] = nArr;
+			}
 			//获得新方块
 			getNewBox();
 			//在屏幕上添加方块
