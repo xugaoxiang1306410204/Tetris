@@ -114,6 +114,33 @@
 			backLayer.removeAllChild();
 			var bitmap = new LBitmap(new LBitmapData(imglist["backImage"]));
 			backLayer.addChild(bitmap);
+			//获得新方块
+			getNewBox();
+			//在屏幕上添加方块
+			addBox();
+			//添加循环播放事件
+			backLayer.addEventListener(LEvent.ENTER_FRAME, onframe);
+		}
+		//循环实现方块下落
+		function onframe(){
+			//首先移除当前下落的方块
+			removeBox();
+			if(speedIndex++ > speed){
+				speedIndex = 0;
+				if(checkBox(0,1)){
+					pointBox.y++;
+				}else{
+					//无法下移
+					addBox();
+					if(pointBox.y<0){
+						gameOver();
+						return;
+					}
+					getNewBox();
+				}
+			}
+			addBox();
+			drawMap();
 		}
 		//移除方块
 		function removeBox(){
