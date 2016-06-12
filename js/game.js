@@ -306,6 +306,20 @@
 				}
 			}
 		}
+		//消除整行方块
+		function moveLine(line){
+			var i;
+			for(i = line;i>1;i--){
+				for(j = 0; j<map[0].length; j++){
+					map[i][j] = map[i-1][j];
+					nodelist[i][j].index = nodelist[i-1][j].index;
+				}
+			}
+			for(j=0;j<map[0].length;j++){
+				map[0][j]= 0;
+				nodelist[0][j].index= -1;
+			}
+		}
 		//游戏结束
 		function gameOver(){
 			backLayer.die();
