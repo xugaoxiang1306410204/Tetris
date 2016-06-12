@@ -115,6 +115,19 @@
 			var bitmap = new LBitmap(new LBitmapData(imglist["backImage"]));
 			backLayer.addChild(bitmap);
 		}
+		//将当前方块添加至游戏界面
+		function addBox(){
+			var i,j;
+			for(i=0;i<nowBox.length;i++){
+				for(j=0;j<nowBox[0].length;j++){
+					if(i+pointBox.y<0||i+pointBox.y>=map.length||j+pointBox.x<0||j+pointBox.x>=map[i].length){
+						continue;
+					}
+					map[i+pointBox.y][j+pointBox.x]=nowBox[i][j]+map[i+pointBox.y][j+pointBox.x];
+					nodelist[i+pointBox.y][j+pointBox.x]["index"] = map[i+pointBox.y][j+pointBox.x] -1;
+				}
+			}
+		}
 		//获得新方块
 		function getNewBox(){
 			if(nextBox ==null){
