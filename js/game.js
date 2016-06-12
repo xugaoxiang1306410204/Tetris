@@ -32,10 +32,10 @@
 			keyControl:null,
 			step:1,
 			stepindex:0,
-			isTouchDown:false,
-			touchX:0,
-			touchY:0,
-			touchMove:false
+			//isTouchDown:false,
+			//touchX:0,
+			//touchY:0,
+			//touchMove:false
 		};
 		//main函数
 		function main(){
